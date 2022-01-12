@@ -1,0 +1,21 @@
+{
+  "name": "fisayoafolayan/get-safe-batch-image-downloader",
+  "description": "An app to batch download images from CSV file",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Fisayo Afolayan",
+      "email": "afolayan@pm.me"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "FisayoAfolayan\\GetSafeBatchImageDownloader\\": "src",
+      "FisayoAfolayan\\GetSafeBatchImageDownloader\\Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "license": "MIT"
+}

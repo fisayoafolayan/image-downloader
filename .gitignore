@@ -1,0 +1,19 @@
+# IDEs
+/.idea
+/.project
+
+
+
+# OS
+.DS_Store
+
+
+
+# Vendor
+/vendor/
+
+
+/data/downloads
+
+# NOTES
+notes.md
