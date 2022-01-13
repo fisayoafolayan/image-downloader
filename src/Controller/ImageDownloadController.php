@@ -29,7 +29,7 @@ class ImageDownloadController
         DirectoryStructureHandlerInterface $directoryStructureHandler
     ) {
         $this->getConfig = $config;
-        $this->imageUrls = $textReader->readTxtFile();
+        $this->imageUrls = $textReader->getImageUrlsFromTextFile();
         $this->imageDownloaderService = $imageDownloaderService;
         $this->directoryStructureHandler = $directoryStructureHandler;
     }
@@ -54,11 +54,11 @@ class ImageDownloadController
             )
         );
 
-
+        // Iterates through batches and downloads images
         for ($i =0; $i < $numberOfProcesses ; $i++) {
-            $nextBatch = array_splice($this->imageUrls, 0, $batchSize);
+            $imageUrlsPerBatch = array_splice($this->imageUrls, 0, $batchSize);
             $this->imageUrls = array_values($this->imageUrls);
-            $this->imageDownloaderService->downloadImages($nextBatch, $directoryName);
+            $this->imageDownloaderService->downloadImages($imageUrlsPerBatch, $directoryName);
         }
     }
 

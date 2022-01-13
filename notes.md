@@ -10,26 +10,30 @@ Notes
 Plan
 - Implement Downloader Factory ✅
 - Implement Downloader Facade - Entry Point ✅
-- Implement Downloader Adapter - Main Class/build up class ✅
+- Implement Controller - Main Class/build up class ✅
 - Implement Validator ✅ 
 - Downloader Client ✅
 - Implement DirectoryStructureHandler - Use FlyLeagueSystem ✅
 - Implement Reader ✅
 - Implement Test
+  - Test DirectoryDownloaderHandler ✅
+  - Test ImageTypeValidator ✅
+  - Test TxtReader ✅
 - Implement ImageDownloaderConstants ✅
+- Implement ImageDownloaderService ✅
 - Implement data folder structure ✅
-    - Implement downloads folder
-    - Implement import/CSV folder
+    - Implement downloads folder ✅
+    - Implement import/TXT folder ✅
     
 - Create Documentation
 
 
 Downloads:
 - don't download files if it has already being downloaded ✅
-- cache name of downloaded file 
-- check cache to download file if it does not exist in cache 
+- cache name of downloaded file ❌
+- check cache to download file if it does not exist in cache ❌
 - separate downloads into folder structure, by datetime ✅
-- implement batch download
+- implement batch download ✅
 
 
 

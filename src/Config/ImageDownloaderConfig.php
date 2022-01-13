@@ -21,7 +21,7 @@ class ImageDownloaderConfig
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_IMPORT_PATH,
-            '/data/import/aww_dataset_short.txt'
+            APPLICATION_ROOT_DIR.'/data/import/aww_dataset.txt'
         );
     }
 
@@ -32,7 +32,7 @@ class ImageDownloaderConfig
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_DOWNLOAD_PATH,
-            '/data/downloads/'
+            APPLICATION_ROOT_DIR.'/data/downloads/'
         );
     }
 
@@ -54,7 +54,7 @@ class ImageDownloaderConfig
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_EXTENSION_TYPES,
-            []
+            ['jpg', 'jpeg', 'png']
         );
     }
 
@@ -72,7 +72,7 @@ class ImageDownloaderConfig
             static::$config = $config;
         }
 
-        if (!static::hasValue($key) && $default !== null) {
+        if ($default !== null && !static::hasValue($key)) {
             return $default;
         }
 

@@ -7,6 +7,6 @@ interface TxtReaderInterface
     /**
      * @return array
      */
-    public function readTxtFile(): array;
+    public function getImageUrlsFromTextFile(): array;
 
 }
