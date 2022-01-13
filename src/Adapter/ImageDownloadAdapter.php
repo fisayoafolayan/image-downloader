@@ -13,28 +13,31 @@ use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInter
 
 class ImageDownloadAdapter implements ImageDownloadAdapterInterface
 {
-    private ImageDownloaderConfig $getConfig;
     private TxtReaderInterface $textReader;
     private ImageTypeValidatorInterface $imageTypeValidator;
     private ClientInterface $client;
 
 
     /**
-     * @param ImageDownloaderConfig $config
+     * ImageDownloadAdapter constructor.
+     * @param TxtReaderInterface $textReader
+     * @param ImageTypeValidatorInterface $imageTypeValidator
+     * @param ClientInterface $client
      */
     public function __construct(
-        ImageDownloaderConfig $config,
         TxtReaderInterface $textReader,
         ImageTypeValidatorInterface $imageTypeValidator,
         ClientInterface $client
     ) {
-        $this->getConfig = $config;
         $this->textReader = $textReader;
         $this->imageTypeValidator = $imageTypeValidator;
         $this->client = $client;
     }
 
-    public function downloadImages()
+    /**
+     * @return string
+     */
+    public function downloadImages(): string
     {
         $imagesUrl = $this->textReader->readTxtFile();
         $validatedUrls = $this->imageTypeValidator->validate($imagesUrl);

@@ -21,7 +21,7 @@ class ImageDownloaderConfig
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_IMPORT_PATH,
-            '/data/import/CSV/aww_dataset_short.txt'
+            '/data/import/aww_dataset_short.txt'
         );
     }
 

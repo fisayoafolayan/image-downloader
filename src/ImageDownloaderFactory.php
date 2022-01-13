@@ -22,8 +22,7 @@ class ImageDownloaderFactory
     public function createImageDownloadAdapter(): ImageDownloadAdapterInterface
     {
         return new ImageDownloadAdapter(
-            $this->getConfig(),
-            $this->createCSVReader(),
+            $this->createTXTReader(),
             $this->createImageTypeValidator(),
             $this->createClient()
         );
@@ -32,7 +31,7 @@ class ImageDownloaderFactory
     /**
      * @return TxtReader
      */
-    public function createCSVReader(): TxtReader
+    public function createTXTReader(): TxtReader
     {
         return new TxtReader($this->getConfig());
 

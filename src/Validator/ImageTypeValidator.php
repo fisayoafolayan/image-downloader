@@ -9,6 +9,7 @@ use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReaderInterface;
 class ImageTypeValidator implements ImageTypeValidatorInterface
 {
     private ImageDownloaderConfig $getConfig;
+    private const KEY_EXTENSION = 'extension';
 
     /**
      * @param ImageDownloaderConfig $config
@@ -17,7 +18,12 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
         $this->getConfig = $config;
     }
 
-    public function validate(Array $imagesUrl)
+    /**
+     * @param array $imagesUrl
+     *
+     * @return array
+     */
+    public function validate(Array $imagesUrl): array
     {
         return $this->filterUrl($imagesUrl);
 
@@ -37,7 +43,7 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
                 unset($imagesUrl[$key]);
             }
 
-            if (!$this->isImage($imageUrl)) {
+            if (!$this->isValidImageUrl($imageUrl)) {
                 unset($imagesUrl[$key]);
             }
 
@@ -53,8 +59,8 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
     protected function getUrlExtension(string $imageUrl)
     {
         $url_path_info = pathinfo($imageUrl);
-        if (!empty($url_path_info['extension'])) {
-            return $url_path_info['extension'];
+        if (!empty($url_path_info[self::KEY_EXTENSION])) {
+            return $url_path_info[self::KEY_EXTENSION];
         }
         return '';
     }
@@ -64,7 +70,7 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
      *
      * @return bool
      */
-    protected function isImage($imageUrl): bool
+    protected function isValidImageUrl($imageUrl): bool
     {
         $imageExtension = $this->getUrlExtension($imageUrl);
         if (in_array($imageExtension,  $this->getConfig->getAllowedImageExtensionTypes(), true)) {
