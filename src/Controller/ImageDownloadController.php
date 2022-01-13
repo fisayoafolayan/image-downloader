@@ -2,16 +2,10 @@
 
 namespace FisayoAfolayan\GetSafeBatchImageDownloader\Controller;
 
-
-use FisayoAfolayan\GetSafeBatchImageDownloader\Client\Client;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Client\ClientInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReaderInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageBatchServiceInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageDownloaderServiceInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidator;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInterface;
 
 class ImageDownloadController
 {
@@ -23,9 +17,9 @@ class ImageDownloadController
 
 
     /**
-     * @param ImageDownloaderConfig $config
-     * @param TxtReaderInterface $textReader
-     * @param ImageDownloaderServiceInterface $imageDownloaderService
+     * @param ImageDownloaderConfig              $config
+     * @param TxtReaderInterface                 $textReader
+     * @param ImageDownloaderServiceInterface    $imageDownloaderService
      * @param DirectoryStructureHandlerInterface $directoryStructureHandler
      */
     public function __construct(
@@ -44,8 +38,9 @@ class ImageDownloadController
 
     public function downloadImages()
     {
-        if (empty($this->imageUrls)){
+        if (empty($this->imageUrls)) {
             // todo return valid exception here
+            echo "File Empty";
             return null;
         }
 
@@ -56,7 +51,8 @@ class ImageDownloadController
             array_chunk(
                 $this->imageUrls,
                 $this->getConfig->getImageDownloadBatchSize()
-            ));
+            )
+        );
 
 
         for ($i =0; $i < $numberOfProcesses ; $i++) {

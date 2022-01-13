@@ -4,7 +4,6 @@ namespace FisayoAfolayan\GetSafeBatchImageDownloader\Service;
 
 
 use FisayoAfolayan\GetSafeBatchImageDownloader\Client\ClientInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInterface;
 
 class ImageDownloaderService implements ImageDownloaderServiceInterface
@@ -14,7 +13,7 @@ class ImageDownloaderService implements ImageDownloaderServiceInterface
 
     /**
      * @param ImageTypeValidatorInterface $imageTypeValidator
-     * @param ClientInterface $client
+     * @param ClientInterface             $client
      */
     public function __construct(
         ImageTypeValidatorInterface $imageTypeValidator,
@@ -25,7 +24,7 @@ class ImageDownloaderService implements ImageDownloaderServiceInterface
     }
 
     /**
-     * @param array $imagesUrl
+     * @param array  $imagesUrl
      * @param string $directoryName
      */
     public function downloadImages(array $imagesUrl, string $directoryName): void

@@ -11,7 +11,8 @@ class TxtReader implements TxtReaderInterface
     /**
      * @param ImageDownloaderConfig $config
      */
-    public function __construct(ImageDownloaderConfig $config) {
+    public function __construct(ImageDownloaderConfig $config)
+    {
         $this->getConfig = $config;
     }
 
@@ -22,7 +23,10 @@ class TxtReader implements TxtReaderInterface
     {
         $imageUrlContent = file($this->getConfig->getImageImportPath(), FILE_IGNORE_NEW_LINES);
 
-        return explode(' ', $imageUrlContent[0]);
+        if ($imageUrlContent) {
+            return explode(' ', $imageUrlContent[0]);
+        }
+        return [];
     }
 
 }

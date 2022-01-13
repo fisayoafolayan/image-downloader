@@ -3,6 +3,7 @@
 namespace FisayoAfolayan\GetSafeBatchImageDownloader\Client;
 
 
+use Exception;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
 
@@ -12,7 +13,7 @@ class Client implements ClientInterface
     private DirectoryStructureHandlerInterface $directoryStructureHandler;
 
     /**
-     * @param ImageDownloaderConfig $config
+     * @param ImageDownloaderConfig              $config
      * @param DirectoryStructureHandlerInterface $directoryStructureHandler
      */
     public function __construct(
@@ -24,7 +25,10 @@ class Client implements ClientInterface
     }
 
     /**
-     * @param array $imageUrls
+     * @param array  $imageUrls
+     * @param string $directoryName
+     *
+     * @return void
      */
     public function downloadImages(array $imageUrls, string $directoryName): void
     {
@@ -40,23 +44,25 @@ class Client implements ClientInterface
     }
 
     /**
-     * @param $imageUrl
+     * @param string $imageUrl
      * @param string $filePath
+     *
+     * @return void
      */
-    protected function createCurlCall($imageUrl, string $filePath): void
+    protected function createCurlCall(string $imageUrl, string $filePath): void
     {
         try {
             // TODO Create logger to log successful download path
 
             $ch = curl_init($imageUrl);
-            $fp = fopen($filePath, 'w');
+            $fp = fopen($filePath, 'wb');
             curl_setopt($ch, CURLOPT_FILE, $fp);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_exec($ch);
             curl_close($ch);
             fclose($fp);
 
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             echo $exception->getMessage();
         }
     }
