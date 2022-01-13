@@ -19,7 +19,10 @@ class ImageDownloaderConfig
      */
     public function getImageImportPath()
     {
-        return self::get(ImageDownloaderConstants::IMAGE_IMPORT_PATH, '/src/data/import/CSV/aww_dataset_short.csv');
+        return self::get(
+            ImageDownloaderConstants::IMAGE_IMPORT_PATH,
+            '/src/data/import/CSV/aww_dataset_short.txt'
+        );
     }
 
     /**
@@ -27,7 +30,10 @@ class ImageDownloaderConfig
      */
     public function getImageDownloadPath()
     {
-        return self::get(ImageDownloaderConstants::IMAGE_DOWNLOAD_PATH, '/src/data/downloads/');
+        return self::get(
+            ImageDownloaderConstants::IMAGE_DOWNLOAD_PATH,
+            '/src/data/downloads/'
+        );
     }
 
     /**
@@ -35,9 +41,29 @@ class ImageDownloaderConfig
      */
     public function getImageCountPerDownload()
     {
-        return self::get(ImageDownloaderConstants::IMAGE_COUNT_PER_DOWNLOAD, 2);
+        return self::get(
+            ImageDownloaderConstants::IMAGE_COUNT_PER_DOWNLOAD,
+            2
+        );
     }
 
+    /**
+     * @return mixed|null
+     */
+    public function getAllowedImageExtensionTypes()
+    {
+        return self::get(
+            ImageDownloaderConstants::IMAGE_EXTENSION_TYPES,
+            []
+        );
+    }
+
+    /**
+     * @param $key
+     * @param null $default
+     *
+     * @return mixed|null
+     */
     public static function get($key, $default = null)
     {
         if (empty(static::$config)) {

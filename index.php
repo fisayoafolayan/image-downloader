@@ -1,18 +1,16 @@
 <?php
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\config\ImageDownloaderConfig;
+use FisayoAfolayan\GetSafeBatchImageDownloader\ImageDownloaderFacade;
 
 define('APPLICATION_ROOT_DIR', realpath(__DIR__));
 
 require_once  'vendor/autoload.php';
 
-require APPLICATION_ROOT_DIR . '/src/config/ImageDownloaderConfig.php';
+
+$runDownloader = new ImageDownloaderFacade();
+
+$runDownloader->runDownload();
 
 
-$ksfs = new ImageDownloaderConfig();
-
-echo $ksfs->getImageImportPath();
-
-//$filename = 'src/data/import/CSV/aww_dataset_short.csv';
 
 

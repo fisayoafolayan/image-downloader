@@ -2,10 +2,22 @@
 
 namespace FisayoAfolayan\GetSafeBatchImageDownloader;
 
-/*
- * @method ImageDownloaderFactory getFactory()
- */
-class ImageDownloaderFacade
+class ImageDownloaderFacade implements ImageDownloaderFacadeInterface
 {
+
+    public function runDownload()
+    {
+        return $this->createImageDownloaderFactory()
+            ->createImageDownloadAdapter()
+            ->downloadImages();
+    }
+
+    /**
+     * @return ImageDownloaderFactory
+     */
+    public function createImageDownloaderFactory(): ImageDownloaderFactory
+    {
+        return new ImageDownloaderFactory();
+    }
 
 }

@@ -3,7 +3,8 @@
 namespace FisayoAfolayan\GetSafeBatchImageDownloader;
 
 
-class ImageDownloaderFacadeInterface
+interface ImageDownloaderFacadeInterface
 {
+    public function runDownload();
 
 }

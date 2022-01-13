@@ -1,10 +1,10 @@
 <?php
 
-
 namespace FisayoAfolayan\GetSafeBatchImageDownloader\Reader;
 
 
-class CsvReader
+interface TxtReaderInterface
 {
+    public function readTxtFile();
 
 }
