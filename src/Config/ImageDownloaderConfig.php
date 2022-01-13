@@ -4,7 +4,7 @@ namespace FisayoAfolayan\GetSafeBatchImageDownloader\Config;
 
 
 use ArrayObject;
-use FisayoAfolayan\GetSafeBatchImageDownloader\ImageDownloaderConstants\ImageDownloaderConstants;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Constants\ImageDownloaderConstants;
 
 class ImageDownloaderConfig
 {

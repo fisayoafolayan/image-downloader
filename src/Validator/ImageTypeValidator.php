@@ -25,7 +25,7 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
      */
     public function validate(Array $imagesUrl): array
     {
-        return $this->filterUrl($imagesUrl);
+        return $this->sanitizeUrl($imagesUrl);
 
     }
 
@@ -34,7 +34,7 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
      *
      * @return array
      */
-    protected function filterUrl(array $imagesUrl): array
+    protected function sanitizeUrl(array $imagesUrl): array
     {
         foreach ($imagesUrl as $key => $imageUrl) {
             $imageUrl = preg_replace("/\s+/", "", $imageUrl);
@@ -48,7 +48,7 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
             }
 
         }
-        return $imagesUrl;
+        return array_values($imagesUrl);
     }
 
     /**

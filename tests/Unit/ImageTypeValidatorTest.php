@@ -18,63 +18,57 @@ class ImageTypeValidatorTest extends TestCase
         }
     }
 
-    public function testImageTypeValidationOnInvalidImageUrls(): void
+    /**
+     * @dataProvider dataProviderForTest
+     */
+    public function testImageTypeValidationOnImageUrls($expectedResult, $input): void
     {
         $factory = new ImageDownloaderFactory();
         $handler = $factory->createImageTypeValidator();
-        $imagesUrlArray = $handler->validate($this->buildInvalidImageUrlsArray());
+        $imagesUrlArray = $handler->validate($input);
 
-        $this->assertCount(0, $imagesUrlArray);
-
-    }
-
-    public function testImageTypeValidationOnValidImageUrls(): void
-    {
-        $factory = new ImageDownloaderFactory();
-        $handler = $factory->createImageTypeValidator();
-        $imagesUrlArray = $handler->validate($this->buildValidImageUrlsArray());
-
-        $this->assertCount(3, $imagesUrlArray);
+        $this->assertSame($expectedResult, $imagesUrlArray);
 
     }
 
-    public function testImageTypeValidationImageUrls(): void
-    {
-        $factory = new ImageDownloaderFactory();
-        $handler = $factory->createImageTypeValidator();
-        $imagesUrlArray = $handler->validate($this->buildImageUrlsArray());
-
-        $this->assertCount(3, $imagesUrlArray);
-
-    }
-
-    public function buildInvalidImageUrlsArray(): array
+    public function dataProviderForTest()
     {
         return [
-            "https://i.redd.it/4jjaxrrs",
-            "xuv41.jpg",
-            "https://i.redd.it/v57m2x0xix051"
-        ];
-    }
-
-    public function buildValidImageUrlsArray(): array
-    {
-        return [
-            "https://i.redd.it/ymqu6rog3xz41.png",
-            "https://i.redd.it/6s20w4wcvlz41.jpg",
-            "https://i.redd.it/2brdaztc8zv41.jpg"
-        ];
-    }
-
-    public function buildImageUrlsArray(): array
-    {
-        return [
-            "https://i.redd.it/4jjaxrrs",
-            "xuv41.jpg",
-            "https://i.redd.it/v57m2x0xix051",
-            "https://i.redd.it/ymqu6rog3xz41.png",
-            "https://i.redd.it/6s20w4wcvlz41.jpg",
-            "https://i.redd.it/2brdaztc8zv41.jpg"
+            [
+                [],
+                [
+                    "https://i.redd.it/4jjaxrrs",
+                    "xuv41.jpg",
+                    "https://i.redd.it/v57m2x0xix051"
+                ]
+            ],
+            [
+                [
+                    "https://i.redd.it/ymqu6rog3xz41.png",
+                    "https://i.redd.it/6s20w4wcvlz41.jpg",
+                    "https://i.redd.it/2brdaztc8zv41.jpg"
+                ],
+                [
+                    "https://i.redd.it/ymqu6rog3xz41.png",
+                    "https://i.redd.it/6s20w4wcvlz41.jpg",
+                    "https://i.redd.it/2brdaztc8zv41.jpg"
+                ],
+            ],
+            [
+                [
+                    "https://i.redd.it/ymqu6rog3xz41.png",
+                    "https://i.redd.it/6s20w4wcvlz41.jpg",
+                    "https://i.redd.it/2brdaztc8zv41.jpg"
+                ],
+                [
+                    "https://i.redd.it/4jjaxrrs",
+                    "xuv41.jpg",
+                    "https://i.redd.it/v57m2x0xix051",
+                    "https://i.redd.it/ymqu6rog3xz41.png",
+                    "https://i.redd.it/6s20w4wcvlz41.jpg",
+                    "https://i.redd.it/2brdaztc8zv41.jpg"
+                ],
+            ]
         ];
     }
 

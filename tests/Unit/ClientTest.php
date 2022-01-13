@@ -30,11 +30,15 @@ class ClientTest extends TestCase
             ->setConstructorArgs([$config, $directoryHandler])
             ->getMock();
 
-        $mockClient
+        $mockClient->expects($this->exactly(3))
             ->method('createCurlCall')
             ->willReturn(200);
 
-        $mockClient->downloadImages($this->buildValidImageUrlsArray(), $config->getImageDownloadPath().'01-13-2022_17:01:01');
+        $directoryName = $directoryHandler->createDirectory();
+        $mockClient->downloadImages(
+            $this->buildValidImageUrlsArray(),
+            $directoryName
+        );
         $this->markTestSkipped('Can be improved');
 
 
@@ -44,8 +48,6 @@ class ClientTest extends TestCase
     {
         return [
             "https://i.redd.it/ymqu6rog3xz41.png",
-            "https://i.redd.it/6s20w4wcvlz41.jpg",
-            "https://i.redd.it/2brdaztc8zv41.jpg"
         ];
     }
 

@@ -47,6 +47,7 @@ class ImageDownloadController
         $directoryName = $this->directoryStructureHandler->createDirectory();
         $batchSize = $this->getConfig->getImageDownloadBatchSize();
 
+
         $numberOfProcesses = count(
             array_chunk(
                 $this->imageUrls,

@@ -19,7 +19,7 @@ Plan
   - Test DirectoryDownloaderHandler ✅
   - Test ImageTypeValidator ✅
   - Test TxtReader ✅
-- Implement ImageDownloaderConstants ✅
+- Implement Constants ✅
 - Implement ImageDownloaderService ✅
 - Implement data folder structure ✅
     - Implement downloads folder ✅
@@ -40,3 +40,6 @@ Downloads:
 
  Improve
  - Better file system/ directory structure
+ - Cache File names before saving image
+ - Improve Exception handling
+ - Improve test cases
