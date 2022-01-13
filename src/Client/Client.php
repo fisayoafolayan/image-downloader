@@ -47,9 +47,9 @@ class Client implements ClientInterface
      * @param string $imageUrl
      * @param string $filePath
      *
-     * @return void
+     * @return int
      */
-    protected function createCurlCall(string $imageUrl, string $filePath): void
+    public function createCurlCall(string $imageUrl, string $filePath): int
     {
         try {
             // TODO Create logger to log successful download path
@@ -59,11 +59,17 @@ class Client implements ClientInterface
             curl_setopt($ch, CURLOPT_FILE, $fp);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_exec($ch);
+
+            $response = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
             curl_close($ch);
             fclose($fp);
 
+            return $response;
+
         } catch (Exception $exception) {
             echo $exception->getMessage();
+            return $exception->getCode();
         }
     }
 
