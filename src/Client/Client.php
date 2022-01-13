@@ -32,11 +32,24 @@ class Client implements ClientInterface
         foreach ($imageUrls as $imageUrl) {
             $filename = basename($imageUrl);
             $filePath = $this->getConfig->getImageDownloadPath(). '/' . $directoryName . '/' . $filename;
+
             if ($this->directoryStructureHandler->checkIfFileExist($directoryName . '/' . $filename)) {
                 continue;
             }
-            $fileDirectory = $this->getConfig->getImageDownloadPath(). '/' . $directoryName;
-            $downloadImage = copy($imageUrl, $filePath);
+            try {
+                echo $filename;
+                $ch = curl_init($imageUrl);
+                $fp = fopen($filePath, 'w');
+                curl_setopt($ch, CURLOPT_FILE, $fp);
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_exec($ch);
+                curl_close($ch);
+                fclose($fp);
+
+            } catch (\Exception $exception) {
+                echo $exception->getMessage();
+            }
+
         }
 
     }
