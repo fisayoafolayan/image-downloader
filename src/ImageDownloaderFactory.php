@@ -2,7 +2,6 @@
 
 namespace FisayoAfolayan\GetSafeBatchImageDownloader;
 
-
 use FisayoAfolayan\GetSafeBatchImageDownloader\Adapter\ImageDownloadAdapter;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Adapter\ImageDownloadAdapterInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Client\Client;
@@ -10,7 +9,7 @@ use FisayoAfolayan\GetSafeBatchImageDownloader\Client\ClientInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandler;
 use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReader;
-use FisayoAfolayan\GetSafeBatchImageDownloader\config\ImageDownloaderConfig;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidator;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInterface;
 
@@ -70,7 +69,6 @@ class ImageDownloaderFactory
         );
 
     }
-
 
     /**
      * @return ImageDownloaderConfig

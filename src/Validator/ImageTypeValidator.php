@@ -3,7 +3,7 @@
 namespace FisayoAfolayan\GetSafeBatchImageDownloader\Validator;
 
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\config\ImageDownloaderConfig;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReaderInterface;
 
 class ImageTypeValidator implements ImageTypeValidatorInterface
@@ -22,7 +22,6 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
         return $this->filterUrl($imagesUrl);
 
     }
-
 
     /**
      * @param array $imagesUrl

@@ -1,14 +1,11 @@
 <?php
 
-
 namespace FisayoAfolayan\GetSafeBatchImageDownloader\Reader;
 
-
-use FisayoAfolayan\GetSafeBatchImageDownloader\config\ImageDownloaderConfig;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 
 class TxtReader implements TxtReaderInterface
 {
-
     private ImageDownloaderConfig $getConfig;
 
     /**
@@ -17,7 +14,6 @@ class TxtReader implements TxtReaderInterface
     public function __construct(ImageDownloaderConfig $config) {
         $this->getConfig = $config;
     }
-
 
     /**
      * @return false|string[]
@@ -28,6 +24,5 @@ class TxtReader implements TxtReaderInterface
 
         return explode(' ', $imageUrlContent[0]);
     }
-
 
 }

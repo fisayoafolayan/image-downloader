@@ -4,7 +4,7 @@ namespace FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler;
 
 
 use FisayoAfolayan\GetSafeBatchImageDownloader\Client\ClientInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\config\ImageDownloaderConfig;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReaderInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInterface;
 use League\Flysystem\Filesystem;

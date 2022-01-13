@@ -1,6 +1,6 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\config;
+namespace FisayoAfolayan\GetSafeBatchImageDownloader\Config;
 
 
 use ArrayObject;
@@ -21,7 +21,7 @@ class ImageDownloaderConfig
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_IMPORT_PATH,
-            '/src/data/import/CSV/aww_dataset_short.txt'
+            '/data/import/CSV/aww_dataset_short.txt'
         );
     }
 
@@ -32,7 +32,7 @@ class ImageDownloaderConfig
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_DOWNLOAD_PATH,
-            '/src/data/downloads/'
+            '/data/downloads/'
         );
     }
 

@@ -2,7 +2,6 @@
 
 namespace FisayoAfolayan\GetSafeBatchImageDownloader\Validator;
 
-
 interface ImageTypeValidatorInterface
 {
     public function validate(Array $imagesUrl);

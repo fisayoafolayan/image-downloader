@@ -3,7 +3,7 @@
 namespace FisayoAfolayan\GetSafeBatchImageDownloader\Client;
 
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\config\ImageDownloaderConfig;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
 use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
 
 class Client implements ClientInterface
@@ -23,6 +23,9 @@ class Client implements ClientInterface
         $this->directoryStructureHandler = $directoryStructureHandler;
     }
 
+    /**
+     * @param array $imageUrls
+     */
     public function downloadImages(array $imageUrls)
     {
         $directoryName = $this->directoryStructureHandler->createDirectory();
