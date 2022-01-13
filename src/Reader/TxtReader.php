@@ -16,9 +16,9 @@ class TxtReader implements TxtReaderInterface
     }
 
     /**
-     * @return false|string[]
+     * @return string[]
      */
-    public function readTxtFile()
+    public function readTxtFile(): array
     {
         $imageUrlContent = file($this->getConfig->getImageImportPath(), FILE_IGNORE_NEW_LINES);
 

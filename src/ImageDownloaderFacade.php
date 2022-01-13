@@ -8,7 +8,7 @@ class ImageDownloaderFacade implements ImageDownloaderFacadeInterface
     public function runDownload()
     {
         return $this->createImageDownloaderFactory()
-            ->createImageDownloadAdapter()
+            ->createImageDownloadController()
             ->downloadImages();
     }
 

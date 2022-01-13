@@ -4,6 +4,10 @@ namespace FisayoAfolayan\GetSafeBatchImageDownloader\Client;
 
 interface ClientInterface
 {
-    public function downloadImages(array $imageUrls);
+    /**
+     * @param array $imageUrls
+     * @param string $directoryName
+     */
+    public function downloadImages(array $imageUrls, string $directoryName): void;
 
 }

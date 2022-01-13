@@ -2,14 +2,16 @@
 
 namespace FisayoAfolayan\GetSafeBatchImageDownloader;
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Adapter\ImageDownloadAdapter;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Adapter\ImageDownloadAdapterInterface;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Controller\ImageDownloadController;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Client\Client;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Client\ClientInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandler;
 use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReader;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReaderInterface;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageDownloaderService;
+use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageDownloaderServiceInterface;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidator;
 use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInterface;
 
@@ -17,21 +19,22 @@ class ImageDownloaderFactory
 {
 
     /**
-     * @return ImageDownloadAdapterInterface
+     * @return ImageDownloadController
      */
-    public function createImageDownloadAdapter(): ImageDownloadAdapterInterface
+    public function createImageDownloadController(): ImageDownloadController
     {
-        return new ImageDownloadAdapter(
+        return new ImageDownloadController(
+            $this->getConfig(),
             $this->createTXTReader(),
-            $this->createImageTypeValidator(),
-            $this->createClient()
+            $this->createImageDownloaderService(),
+            $this->createDirectoryStructureHandler()
         );
     }
 
     /**
-     * @return TxtReader
+     * @return TxtReaderInterface
      */
-    public function createTXTReader(): TxtReader
+    public function createTXTReader(): TxtReaderInterface
     {
         return new TxtReader($this->getConfig());
 
@@ -59,9 +62,21 @@ class ImageDownloaderFactory
     }
 
     /**
-     * @return DirectoryStructureHandler
+     * @return ImageDownloaderServiceInterface
      */
-    public function createDirectoryStructureHandler(): DirectoryStructureHandler
+    public function createImageDownloaderService(): ImageDownloaderServiceInterface
+    {
+        return new ImageDownloaderService(
+            $this->createImageTypeValidator(),
+            $this->createClient()
+        );
+
+    }
+
+    /**
+     * @return DirectoryStructureHandlerInterface
+     */
+    public function createDirectoryStructureHandler(): DirectoryStructureHandlerInterface
     {
         return new DirectoryStructureHandler(
             $this->getConfig()

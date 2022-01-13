@@ -52,20 +52,6 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
     }
 
     /**
-     * @param string $imageUrl
-     *
-     * @return mixed|string
-     */
-    protected function getUrlExtension(string $imageUrl)
-    {
-        $url_path_info = pathinfo($imageUrl);
-        if (!empty($url_path_info[self::KEY_EXTENSION])) {
-            return $url_path_info[self::KEY_EXTENSION];
-        }
-        return '';
-    }
-
-    /**
      * @param $imageUrl
      *
      * @return bool
@@ -77,5 +63,19 @@ class ImageTypeValidator implements ImageTypeValidatorInterface
             return true;
         }
         return false;
+    }
+
+    /**
+     * @param string $imageUrl
+     *
+     * @return mixed|string
+     */
+    protected function getUrlExtension(string $imageUrl)
+    {
+        $url_path_info = pathinfo($imageUrl);
+        if (!empty($url_path_info[self::KEY_EXTENSION])) {
+            return $url_path_info[self::KEY_EXTENSION];
+        }
+        return '';
     }
 }

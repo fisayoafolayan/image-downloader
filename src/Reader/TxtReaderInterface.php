@@ -4,6 +4,9 @@ namespace FisayoAfolayan\GetSafeBatchImageDownloader\Reader;
 
 interface TxtReaderInterface
 {
-    public function readTxtFile();
+    /**
+     * @return array
+     */
+    public function readTxtFile(): array;
 
 }

@@ -26,9 +26,8 @@ class Client implements ClientInterface
     /**
      * @param array $imageUrls
      */
-    public function downloadImages(array $imageUrls)
+    public function downloadImages(array $imageUrls, string $directoryName): void
     {
-        $directoryName = $this->directoryStructureHandler->createDirectory();
         foreach ($imageUrls as $imageUrl) {
             $filename = basename($imageUrl);
             $filePath = $this->getConfig->getImageDownloadPath(). '/' . $directoryName . '/' . $filename;
@@ -36,22 +35,30 @@ class Client implements ClientInterface
             if ($this->directoryStructureHandler->checkIfFileExist($directoryName . '/' . $filename)) {
                 continue;
             }
-            try {
-                echo $filename;
-                $ch = curl_init($imageUrl);
-                $fp = fopen($filePath, 'w');
-                curl_setopt($ch, CURLOPT_FILE, $fp);
-                curl_setopt($ch, CURLOPT_HEADER, 0);
-                curl_exec($ch);
-                curl_close($ch);
-                fclose($fp);
-
-            } catch (\Exception $exception) {
-                echo $exception->getMessage();
-            }
-
+            $this->createCurlCall($imageUrl, $filePath);
         }
+    }
 
+    /**
+     * @param $imageUrl
+     * @param string $filePath
+     */
+    protected function createCurlCall($imageUrl, string $filePath): void
+    {
+        try {
+            // TODO Create logger to log successful download path
+
+            $ch = curl_init($imageUrl);
+            $fp = fopen($filePath, 'w');
+            curl_setopt($ch, CURLOPT_FILE, $fp);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_exec($ch);
+            curl_close($ch);
+            fclose($fp);
+
+        } catch (\Exception $exception) {
+            echo $exception->getMessage();
+        }
     }
 
 }

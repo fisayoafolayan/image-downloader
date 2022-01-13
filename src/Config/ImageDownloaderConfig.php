@@ -26,9 +26,9 @@ class ImageDownloaderConfig
     }
 
     /**
-     * @return mixed|null
+     * @return string
      */
-    public function getImageDownloadPath()
+    public function getImageDownloadPath(): string
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_DOWNLOAD_PATH,
@@ -37,20 +37,20 @@ class ImageDownloaderConfig
     }
 
     /**
-     * @return mixed|null
+     * @return integer
      */
-    public function getImageCountPerDownload()
+    public function getImageDownloadBatchSize(): int
     {
         return self::get(
-            ImageDownloaderConstants::IMAGE_COUNT_PER_DOWNLOAD,
+            ImageDownloaderConstants::IMAGE_DOWNLOAD_BATCH_SIZE,
             2
         );
     }
 
     /**
-     * @return mixed|null
+     * @return array
      */
-    public function getAllowedImageExtensionTypes()
+    public function getAllowedImageExtensionTypes(): array
     {
         return self::get(
             ImageDownloaderConstants::IMAGE_EXTENSION_TYPES,
@@ -59,12 +59,12 @@ class ImageDownloaderConfig
     }
 
     /**
-     * @param $key
+     * @param string $key
      * @param null $default
      *
      * @return mixed|null
      */
-    public static function get($key, $default = null)
+    public static function get(string $key, $default = null)
     {
         if (empty(static::$config)) {
             $config = new ArrayObject();
@@ -73,7 +73,6 @@ class ImageDownloaderConfig
         }
 
         if (!static::hasValue($key) && $default !== null) {
-
             return $default;
         }
 
