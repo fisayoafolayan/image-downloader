@@ -13,7 +13,7 @@ What things you need to install the software.
 ## Install
 Clone the git repository on your computer
 ```
-$ https://github.com/fisayoafolayan/image-downloader.git
+$ git clone https://github.com/fisayoafolayan/image-downloader.git
 ```
 You can also download the entire repository as a zip file and unpack on your computer.
 
