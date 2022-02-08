@@ -1,6 +1,6 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler;
+namespace FisayoAfolayan\ImageDownloader\DirectoryHandler;
 
 
 interface DirectoryStructureHandlerInterface

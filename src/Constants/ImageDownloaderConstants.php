@@ -1,6 +1,6 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Constants;
+namespace FisayoAfolayan\ImageDownloader\Constants;
 
 
 interface ImageDownloaderConstants

@@ -1,19 +1,19 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader;
+namespace FisayoAfolayan\ImageDownloader;
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Controller\ImageDownloadController;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Client\Client;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Client\ClientInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandler;
-use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReader;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReaderInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageDownloaderService;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageDownloaderServiceInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidator;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInterface;
+use FisayoAfolayan\ImageDownloader\Controller\ImageDownloadController;
+use FisayoAfolayan\ImageDownloader\Client\Client;
+use FisayoAfolayan\ImageDownloader\Client\ClientInterface;
+use FisayoAfolayan\ImageDownloader\DirectoryHandler\DirectoryStructureHandler;
+use FisayoAfolayan\ImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
+use FisayoAfolayan\ImageDownloader\Reader\TxtReader;
+use FisayoAfolayan\ImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\ImageDownloader\Reader\TxtReaderInterface;
+use FisayoAfolayan\ImageDownloader\Service\ImageDownloaderService;
+use FisayoAfolayan\ImageDownloader\Service\ImageDownloaderServiceInterface;
+use FisayoAfolayan\ImageDownloader\Validator\ImageTypeValidator;
+use FisayoAfolayan\ImageDownloader\Validator\ImageTypeValidatorInterface;
 
 class ImageDownloaderFactory
 {

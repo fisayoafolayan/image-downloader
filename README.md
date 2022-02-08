@@ -75,27 +75,8 @@ $ composer install
     ```
     $ php index.php
     ``` 
-        
-    
-# Why is this a good  solution?
- - The implementation follows the OOP and SOLID guidelines. 
- - Factory and Facade Design patterns were used. 
- - Dependency Injections is also used.
- - A robust config file is used
- - TxtReader is used to read the .txt file where the urls are stored and returns an array of the urls
- - From the controller, a service is injected to validate the urls after which it is passed to the client responsible for downloading images
- - Validator method sanitizes the urls, and returns valid urls
- - In the controller, batches are implemented based on the configuration in the config_default file/
- - Because factory design pattern is used, every part of the system can be substituted or extended with new classes
- - Curl is used as the client of choice, with its implementation, the client can be substituted for a new client, and the download functionality will work as expected
- - The modularity of the implementation, makes it efficient for production and further development with other developers
- - The namespace and folder directory, are generic enough to accommodate new features
 
-
-
-
-# Further Improvement
-- Cache File names before saving image
-- Improve Exception handling
-- Improve test cases
-- Import file can be included in the terminal 
+- To execute test:
+  ```
+  $ ./vendor/bin/phpunit ./tests/Unit/
+  ``` 

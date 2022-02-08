@@ -1,9 +1,9 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Tests\Unit;
+namespace FisayoAfolayan\ImageDownloader\Tests\Unit;
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Client\Client;
-use FisayoAfolayan\GetSafeBatchImageDownloader\ImageDownloaderFactory;
+use FisayoAfolayan\ImageDownloader\Client\Client;
+use FisayoAfolayan\ImageDownloader\ImageDownloaderFactory;
 use PHPUnit\Framework\TestCase;
 
 class ClientTest extends TestCase

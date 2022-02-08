@@ -1,5 +1,5 @@
 {
-    "name": "fisayoafolayan/get-safe-batch-image-downloader",
+    "name": "fisayoafolayan/batch-image-downloader",
     "description": "An app to batch download images from TXT file",
     "type": "library",
     "authors": [
@@ -10,8 +10,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "FisayoAfolayan\\GetSafeBatchImageDownloader\\": "src",
-            "FisayoAfolayan\\GetSafeBatchImageDownloader\\Tests\\": "tests"
+            "FisayoAfolayan\\ImageDownloader\\": "src",
+            "FisayoAfolayan\\ImageDownloader\\Tests\\": "tests"
         }
     },
     "require-dev": {

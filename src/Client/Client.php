@@ -1,11 +1,11 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Client;
+namespace FisayoAfolayan\ImageDownloader\Client;
 
 
 use Exception;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
-use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
+use FisayoAfolayan\ImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\ImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
 
 class Client implements ClientInterface
 {

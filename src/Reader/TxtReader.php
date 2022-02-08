@@ -1,8 +1,8 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Reader;
+namespace FisayoAfolayan\ImageDownloader\Reader;
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\ImageDownloader\Config\ImageDownloaderConfig;
 
 class TxtReader implements TxtReaderInterface
 {

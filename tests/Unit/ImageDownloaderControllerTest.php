@@ -1,12 +1,12 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Tests\Unit;
+namespace FisayoAfolayan\ImageDownloader\Tests\Unit;
 
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Controller\ImageDownloadController;
-use FisayoAfolayan\GetSafeBatchImageDownloader\ImageDownloaderFactory;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageDownloaderService;
+use FisayoAfolayan\ImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\ImageDownloader\Controller\ImageDownloadController;
+use FisayoAfolayan\ImageDownloader\ImageDownloaderFactory;
+use FisayoAfolayan\ImageDownloader\Service\ImageDownloaderService;
 use PHPUnit\Framework\TestCase;
 
 class ImageDownloaderControllerTest extends TestCase

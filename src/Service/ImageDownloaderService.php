@@ -1,10 +1,10 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Service;
+namespace FisayoAfolayan\ImageDownloader\Service;
 
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Client\ClientInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Validator\ImageTypeValidatorInterface;
+use FisayoAfolayan\ImageDownloader\Client\ClientInterface;
+use FisayoAfolayan\ImageDownloader\Validator\ImageTypeValidatorInterface;
 
 class ImageDownloaderService implements ImageDownloaderServiceInterface
 {

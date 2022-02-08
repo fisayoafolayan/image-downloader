@@ -1,11 +1,11 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Controller;
+namespace FisayoAfolayan\ImageDownloader\Controller;
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
-use FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Reader\TxtReaderInterface;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Service\ImageDownloaderServiceInterface;
+use FisayoAfolayan\ImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\ImageDownloader\DirectoryHandler\DirectoryStructureHandlerInterface;
+use FisayoAfolayan\ImageDownloader\Reader\TxtReaderInterface;
+use FisayoAfolayan\ImageDownloader\Service\ImageDownloaderServiceInterface;
 
 class ImageDownloadController
 {

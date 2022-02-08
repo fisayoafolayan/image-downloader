@@ -1,9 +1,9 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Validator;
+namespace FisayoAfolayan\ImageDownloader\Validator;
 
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\ImageDownloader\Config\ImageDownloaderConfig;
 
 class ImageTypeValidator implements ImageTypeValidatorInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Service;
+namespace FisayoAfolayan\ImageDownloader\Service;
 
 
 interface ImageDownloaderServiceInterface

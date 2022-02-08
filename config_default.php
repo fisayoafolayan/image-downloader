@@ -1,6 +1,6 @@
 <?php
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Constants\ImageDownloaderConstants;
+use FisayoAfolayan\ImageDownloader\Constants\ImageDownloaderConstants;
 
 $config[ImageDownloaderConstants::IMAGE_IMPORT_PATH] = APPLICATION_ROOT_DIR . '/data/import/aww_dataset.txt';
 $config[ImageDownloaderConstants::IMAGE_DOWNLOAD_PATH] = APPLICATION_ROOT_DIR . '/data/downloads';

@@ -1,10 +1,10 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Config;
+namespace FisayoAfolayan\ImageDownloader\Config;
 
 
 use ArrayObject;
-use FisayoAfolayan\GetSafeBatchImageDownloader\Constants\ImageDownloaderConstants;
+use FisayoAfolayan\ImageDownloader\Constants\ImageDownloaderConstants;
 
 class ImageDownloaderConfig
 {

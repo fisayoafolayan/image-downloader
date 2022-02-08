@@ -1,6 +1,6 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Reader;
+namespace FisayoAfolayan\ImageDownloader\Reader;
 
 interface TxtReaderInterface
 {

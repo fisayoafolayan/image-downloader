@@ -1,6 +1,6 @@
 <?php
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\ImageDownloaderFacade;
+use FisayoAfolayan\ImageDownloader\ImageDownloaderFacade;
 
 define('APPLICATION_ROOT_DIR', realpath(__DIR__));
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\Validator;
+namespace FisayoAfolayan\ImageDownloader\Validator;
 
 interface ImageTypeValidatorInterface
 {

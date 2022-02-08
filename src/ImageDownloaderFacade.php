@@ -1,6 +1,6 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader;
+namespace FisayoAfolayan\ImageDownloader;
 
 class ImageDownloaderFacade implements ImageDownloaderFacadeInterface
 {

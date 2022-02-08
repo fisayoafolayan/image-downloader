@@ -1,9 +1,9 @@
 <?php
 
-namespace FisayoAfolayan\GetSafeBatchImageDownloader\DirectoryHandler;
+namespace FisayoAfolayan\ImageDownloader\DirectoryHandler;
 
 
-use FisayoAfolayan\GetSafeBatchImageDownloader\Config\ImageDownloaderConfig;
+use FisayoAfolayan\ImageDownloader\Config\ImageDownloaderConfig;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Local\LocalFilesystemAdapter;
 
